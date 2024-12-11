@@ -1,5 +1,14 @@
 <?php
-define('BASE_URL', 'http://localhost/arsip-template/');
+session_start();
+
+include_once __DIR__.'../../config.php';
+if(!isset($_SESSION['user']['id'])) {
+    echo "<script>
+        alert('Login terlebih dahulu')
+        window.location.href='http://localhost/arsip-template/index.php';
+        </script>";
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +55,7 @@ define('BASE_URL', 'http://localhost/arsip-template/');
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="login.php">Logout</a>
+                    <a class="dropdown-item" href="<?php echo BASE_URL; ?>index.php">Logout</a>
                 </div>
             </li>
         </ul>

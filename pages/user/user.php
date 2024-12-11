@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . '/../../inc/header.php';
 include __DIR__ . '/../../inc/sidebar.php';
+hapus_user();
 ?>
 <div id="layoutSidenav_content">
     <main>
@@ -22,7 +23,7 @@ include __DIR__ . '/../../inc/sidebar.php';
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
-                            <tr>
+                                <tr>
                                     <th>No</th>
                                     <th>Foto</th>
                                     <th>Nama</th>
@@ -30,31 +31,30 @@ include __DIR__ . '/../../inc/sidebar.php';
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Foto</th>
-                                    <th>Nama</th>
-                                    <th>Username</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><img class="mb-4 img-error" src="<?php echo BASE_URL;?>assets/img/error-404-monochrome.svg" width="50" height="50"/></td>
-                                    <td><a href=""><u>salman</u></a></td>
-                                    <td>$320,800</td>
-                                    <td>
-                                        <a href="edit_User.php" class="btn btn-warning btn-sm">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        &nbsp;
-                                        <a href="#" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                            <?php
+                            $no = 1;
+                            $tampil_user = tampil_user();
+                            foreach ($tampil_user as $user) :
+                            ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?php echo $no; ?></td>
+                                        <td><img src="<?php echo $user['foto']; ?>" alt="" height="50"></td>
+                                        <td><a href=""><u><?php echo $user['first_name']; ?> <?php echo $user['last_name']; ?></u></a></td>
+                                        <td><?php echo $user['username']; ?></td>
+                                        <td>
+                                            <a href="edit_user.php?id=<?php echo $user['id']; ?>" class="btn btn-warning btn-sm">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            &nbsp;
+                                            <a href="user.php?id=<?php echo $user['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apa anda yakin ingin menghapus user ini?')">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                endforeach; 
+                                ?>
                             </tbody>
                         </table>
                     </div>

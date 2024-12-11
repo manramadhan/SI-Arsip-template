@@ -1,6 +1,21 @@
 <?php
 include __DIR__ . '/../../inc/header.php';
 include __DIR__ . '/../../inc/sidebar.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Call the function to add user and check the result
+    if (tambah_user()) {
+        echo "<script>
+                alert('Berhasil tambah user');
+                window.location = 'user.php';
+            </script>";
+    } else {
+        echo "<script>
+                alert('Gagal tambah user');
+                window.location = 'tambah_user.php';
+            </script>";
+    }
+}
 ?>
 
 <div id="layoutSidenav_content">
@@ -14,24 +29,39 @@ include __DIR__ . '/../../inc/sidebar.php';
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-plus mr-1"></i>
-                     Tambah User
+                    Tambah User
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="<?php echo BASE_URL; ?>/pages/proses_tambah_User.php">
+                    <form method="POST" enctype="multipart/form-data">
                         <!-- input text -->
                         <div class="form-group">
-                            <label for="UserNama">Nama</label>
-                            <input type="text" class="form-control" id="UserNama" name="User_nama" autofocus required>
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="first_name" autofocus required>
+                        </div>
+                        <!-- Input text -->
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="last_name" required>
                         </div>
                         <!-- input text -->
                         <div class="form-group">
-                            <label for="exampleInputName1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputName1">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <!-- input number -->
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <!-- input text -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <!-- input password -->
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <!-- Select -->
                         <div class="form-group">
@@ -43,14 +73,14 @@ include __DIR__ . '/../../inc/sidebar.php';
                         </div>
                         <!-- input file -->
                         <div class="form-group">
-                            <label for="exampleInputFile1">Upload Foto</label>
-                            <input type="file" class="form-control-file" id="exampleInputFile1">
+                            <label for="foto">Foto</label>
+                            <input type="file" class="form-control-file" id="foto" name="foto" required>
                         </div>
                         <!-- input button -->
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-check-circle mr-1"></i>Simpan
                         </button>
-                        <a href="User.php" class="btn btn-link float-right">
+                        <a href="User.php" class="btn btn-link">
                             <i class="fas fa-arrow-left mr-1"></i>
                             Kembali
                         </a>

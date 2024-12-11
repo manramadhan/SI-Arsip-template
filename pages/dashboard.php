@@ -1,6 +1,20 @@
 <?php
 include __DIR__ . '../../inc/header.php';
 include __DIR__ . '../../inc/sidebar.php';
+
+// Periksa apakah koneksi `$db` tersedia dan valid
+if (!$db) {
+    die("Koneksi ke database gagal: " . $db->connect_error);
+}
+// Ambil data jumlah user
+$queryUser = "SELECT COUNT(*) AS total_user FROM users";
+$resultUser = $db->query($queryUser);
+
+$totalUser = 0;
+if ($resultUser) {
+    $dataUser = $resultUser->fetch_assoc();
+    $totalUser = $dataUser['total_user'];
+}
 ?>
 <div id="layoutSidenav_content">
     <main>
@@ -26,7 +40,7 @@ include __DIR__ . '../../inc/sidebar.php';
                     <div class="card bg-warning text-white mb-4">
                         <div class="card-body d-flex">
                             User/Pengguna
-                        <span class="ml-auto mr-0 h2">5</span>
+                        <span class="ml-auto mr-0 h2"><?php echo $totalUser ?></span>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="<?php echo BASE_URL; ?>/pages/user/user.php">View Details</a>

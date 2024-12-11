@@ -1,16 +1,16 @@
 <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Menu</div> 
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/dashboard.php">
-                            <div class="sb-nav-link-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            Dashboard
-                        </a>
-                        <!-- <div class="sb-sidenav-menu-heading">Interface</div>
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Menu</div>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/dashboard.php">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        Dashboard
+                    </a>
+                    <!-- <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
                             aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon">
@@ -91,47 +91,47 @@
                                 </div>
                             </nav>
                         </div> -->
-                        <!-- <div class="sb-sidenav-menu-heading">Menu</div> -->
-                        <!-- <a class="nav-link" href="<?php echo BASE_URL; ?>charts.php">
+                    <!-- <div class="sb-sidenav-menu-heading">Menu</div> -->
+                    <!-- <a class="nav-link" href="<?php echo BASE_URL; ?>charts.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-chart-area"></i>
                             </div>
                             Charts
                         </a> -->
-                        <!-- <a class="nav-link" href="<?php echo BASE_URL; ?>tables.php">
+                    <!-- <a class="nav-link" href="<?php echo BASE_URL; ?>tables.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
                         </a> -->
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/arsip/arsip.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
-                            Data Arsip
-                        </a>
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/kategori/kategori.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Kategori
-                        </a>
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/user/user.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Data User
-                        </a>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/arsip/arsip.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
+                        Data Arsip
+                    </a>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/kategori/kategori.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                        Kategori
+                    </a>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/user/user.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                        Data User
+                    </a>
 
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/riwayat_unduh/riwayat_unduh.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-download"></i></div>
-                            Riwayat Unduh
-                        </a>
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>pages/ganti_password/ganti_password.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-key"></i></div>
-                            Ganti Password
-                        </a>
-                        <a class="nav-link" href="<?php echo BASE_URL; ?>index.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
-                            Logout
-                        </a>
-                    </div>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/riwayat_unduh/riwayat_unduh.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-download"></i></div>
+                        Riwayat Unduh
+                    </a>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>pages/ganti_password/ganti_password.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-key"></i></div>
+                        Ganti Password
+                    </a>
+                    <a class="nav-link" href="<?php echo BASE_URL; ?>index.php">
+                        <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                        Logout
+                    </a>
                 </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
-                </div>
-            </nav>
-        </div>
+            </div>
+            <div class="sb-sidenav-footer">
+                <div class="small">Logged in as:</div>
+                Start Bootstrap
+            </div>
+        </nav>
+    </div>
